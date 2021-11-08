@@ -29,7 +29,7 @@ export default function EventCard({ events, user }) {
 								<Card.Title>{event.eventTitle}</Card.Title>
 								<Card.Text>{event.eventDescription}</Card.Text>
 								<Card.Text>{event.eventDate}</Card.Text>
-								<div className="m-2">
+								<div className="">
 									<ConditionalLink
 										className=""
 										children={[

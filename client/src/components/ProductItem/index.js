@@ -34,31 +34,28 @@ function ProductItem(item) {
 	};
 
 	return (
-		<div className="">
-			<div className="priceColumn position-relative">
-				<Link
-					className="productTitle position-absolute top-50 start-50 translate-middle"
-					to={`/products/${_id}`}
-				>
+		<div className=" d-flex flex-column flex-wrap justify-content-between">
+			<div className="priceColumn d-flex flex-column justify-content-between boxShadow">
+				<Link className="productTitle " to={`/products/${_id}`}>
+					<h2>{name}</h2>
 					{/* <img
-						style={{ width: "100%" }}
+						style={{ width: "50%", margin: "25px" }}
 						alt={name}
 						src={`/images/${image}`}
 						className="productImg"
 					/> */}
-					<h2>{name}</h2>
 				</Link>
 				<div>
-					<div>
+					{/* <div>
 						{quantity} {pluralize("item", quantity)} in stock
-					</div>
-					<span className="price position-absolute translate-middle ">
+					</div> */}
+					<span className="price  ">
 						${price}
 						<p className="text-muted ">/year</p>
 					</span>
 				</div>
 				<button
-					className="position-absolute translate-middle addToCartBtn btn-secondary btn"
+					className="addToCartBtn  btn btn-secondary"
 					onClick={addToCart}
 				>
 					Add to cart

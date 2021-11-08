@@ -78,9 +78,9 @@ const Cart = () => {
 	}
 
 	return (
-		<div className="cart">
+		<div className="cart ">
 			<div className="close" onClick={toggleCart}>
-				[close]
+				close
 			</div>
 			<h2>Shopping Cart</h2>
 			{state.cart.length ? (
@@ -89,12 +89,17 @@ const Cart = () => {
 						<CartItem key={item._id} item={item} />
 					))}
 
-					<div className="flex-row space-between">
+					<div className="d-flex justify-content-between">
 						<strong>Total: ${calculateTotal()}</strong>
 
 						{/* Check to see if the user is logged in. If so render a button to check out */}
 						{Auth.loggedIn() ? (
-							<button onClick={submitCheckout}>Checkout</button>
+							<button
+								className="btn-secondary btn"
+								onClick={submitCheckout}
+							>
+								Checkout
+							</button>
 						) : (
 							<span>(log in to check out)</span>
 						)}

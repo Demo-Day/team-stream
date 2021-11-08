@@ -4,15 +4,17 @@
 
 .navbar {
     /* background-color: rgba(194, 194, 194, 0.276) !important; */
-    padding: 15px;
+    padding: 2px;
 }
 
 .navbar svg {
     color: black;
-    font-size: large;
+    font-size: medium;
 }
 
 .navbar a {
     color: black !important;
     text-decoration: none;
+    font-size: medium;
+    margin: 5px;
 }
