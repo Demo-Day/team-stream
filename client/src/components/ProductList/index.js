@@ -45,32 +45,38 @@ function ProductList() {
 
 	return (
 		<div className="">
-			<div className="productHeader ">
-				<h2>Billed Annually</h2>
-			</div>
-			<div className="container-fluid">
-				<div className="">
-					{state.products.length ? (
-						<div className="d-flex flex-row">
-							{filterProducts().map((product) => (
-								<div className="col-12 col-md-4 ">
-									<ProductItem
-										key={product._id}
-										_id={product._id}
-										image={product.image}
-										name={product.name}
-										price={product.price}
-										quantity={product.quantity}
-									/>
+			<div className="">
+				<div className="productHeader">
+					<div className=" ">
+						<h2>Billed Annually</h2>
+					</div>
+					<div className="">
+						<div className="container-fluid">
+							{state.products.length ? (
+								<div className="row">
+									{filterProducts().map((product) => (
+										<div className="col-12 col-md-4">
+											<ProductItem
+												key={product._id}
+												_id={product._id}
+												image={product.image}
+												name={product.name}
+												price={product.price}
+												quantity={product.quantity}
+											/>
+										</div>
+									))}
 								</div>
-							))}
+							) : (
+								<h3 className="">
+									You haven't added any products yet!
+								</h3>
+							)}
+							{loading ? (
+								<img src={spinner} alt="loading" />
+							) : null}
 						</div>
-					) : (
-						<h3 className="">
-							You haven't added any products yet!
-						</h3>
-					)}
-					{loading ? <img src={spinner} alt="loading" /> : null}
+					</div>
 				</div>
 			</div>
 		</div>

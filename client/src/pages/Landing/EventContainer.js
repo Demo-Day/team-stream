@@ -29,7 +29,7 @@ const EventContainer = ({ events }) => {
 		);
 	}
 	return (
-		<div>
+		<div className="">
 			<EventCard events={eventList} user={user} />
 		</div>
 	);
