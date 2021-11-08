@@ -85,7 +85,7 @@ export default function EventForm() {
 			} catch (err) {
 				console.error(err);
 			}
-			window.location("/");
+			window.location.replace("/");
 		} else {
 			alert(
 				"You must be a premium member to create an event. Signup through the link in the navbar"
