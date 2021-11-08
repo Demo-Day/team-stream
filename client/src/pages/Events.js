@@ -23,14 +23,10 @@ const Events = () => {
 				<div>
 					<h2 className="m-3 title">Events</h2>
 				</div>
-				<p className="m-3">
+				<p className="m-3 text-center">
 					Premium events are only available to premium members.
 				</p>
-				<Link
-					to="/shop"
-					className="btn btn-secondary w-25 text-center"
-					size="sm"
-				>
+				<Link to="/shop" className="btn btn-secondary text-center">
 					Become a Premium Member
 					<FontAwesomeIcon
 						icon={faChevronRight}
