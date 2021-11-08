@@ -35,11 +35,13 @@ function Success() {
 	}, [addOrder]);
 
 	return (
-		<div className="ui raised padded container segment">
+		<div className="boxShadow">
 			<Jumbotron>
 				<h1 className="ui header">Success!</h1>
 				<h2 className="ui header">Thank you for your purchase!</h2>
-				<h2 className="ui header">You will now be redirected to the home page</h2>
+				<h2 className="ui header">
+					You will now be redirected to the home page
+				</h2>
 			</Jumbotron>
 		</div>
 	);

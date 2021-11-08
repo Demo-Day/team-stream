@@ -165,8 +165,10 @@ textarea {
   font-size: small;
 }
 
-.addToCartBtn {}
-
 .columnBkg {
   background-color: blue;
+}
+
+.eventCardTitle {
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
 }

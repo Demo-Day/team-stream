@@ -26,26 +26,30 @@ export default function EventCard({ events, user }) {
 							/>
 							<Card.Img src={eventImg} variant="top" />
 							<Card.Body>
-								<Card.Title>{event.eventTitle}</Card.Title>
-								<Card.Text>{event.eventDescription}</Card.Text>
-								<Card.Text>{event.eventDate}</Card.Text>
-								<div className="">
-									<ConditionalLink
-										className=""
-										children={[
-											"Enter Event",
-											"Premium Members Only",
-										]}
-										to={`/event/${event._id}`}
-										condition={
-											event.isPremiumContent === true &&
-											(user.isPremium === false ||
-												!Auth.loggedIn())
-												? false
-												: true
-										}
-									></ConditionalLink>
+								<div className="m-3">
+									<Card.Title className="eventCardTitle">
+										{event.eventTitle}
+									</Card.Title>
+									<Card.Text>
+										{event.eventDescription}
+									</Card.Text>
+									<Card.Text>{event.eventDate}</Card.Text>
 								</div>
+								<ConditionalLink
+									className=""
+									children={[
+										"Enter Event",
+										"Premium Members Only",
+									]}
+									to={`/event/${event._id}`}
+									condition={
+										event.isPremiumContent === true &&
+										(user.isPremium === false ||
+											!Auth.loggedIn())
+											? false
+											: true
+									}
+								></ConditionalLink>
 							</Card.Body>
 						</div>
 					</div>
