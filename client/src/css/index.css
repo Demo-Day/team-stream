@@ -1,0 +1,14 @@
+.viewWindow {
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.navHeight {
+    height: 3vh;
+}
+
+.app {
+    height: 97vh;
+    background-color: whitesmoke;
+}

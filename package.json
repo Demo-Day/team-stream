@@ -1,0 +1,29 @@
+{
+	"name": "streaming-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server/server.js",
+	"scripts": {
+		"start": "node server/server.js",
+		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+		"install": "cd server && npm i && cd ../client && npm i",
+		"seed": "cd server && npm run seed",
+		"build": "cd client && npm run build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"concurrently": "^5.1.0"
+	},
+	"dependencies": {
+		"dotenv": "^10.0.0",
+		"jquery": "^3.6.0",
+		"moment": "^2.29.1",
+		"react-dots-loader": "^1.1.4",
+		"semantic-ui-react": "^2.0.4",
+		"socket.io": "^4.3.1",
+		"socket.io-client": "^4.3.2",
+		"uuid": "^8.3.2"
+	}
+}
