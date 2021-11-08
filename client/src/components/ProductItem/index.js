@@ -34,22 +34,36 @@ function ProductItem(item) {
 	};
 
 	return (
-		<div className="ui card">
-			<Link to={`/products/${_id}`}>
-				<img
-					style={{ width: "100%" }}
-					alt={name}
-					src={`/images/${image}`}
-				/>
-				<p>{name}</p>
-			</Link>
-			<div>
+		<div className="">
+			<div className="priceColumn position-relative">
+				<Link
+					className="productTitle position-absolute top-50 start-50 translate-middle"
+					to={`/products/${_id}`}
+				>
+					{/* <img
+						style={{ width: "100%" }}
+						alt={name}
+						src={`/images/${image}`}
+						className="productImg"
+					/> */}
+					<h2>{name}</h2>
+				</Link>
 				<div>
-					{quantity} {pluralize("item", quantity)} in stock
+					<div>
+						{quantity} {pluralize("item", quantity)} in stock
+					</div>
+					<span className="price position-absolute translate-middle ">
+						${price}
+						<p className="text-muted ">/year</p>
+					</span>
 				</div>
-				<span>${price}</span>
+				<button
+					className="position-absolute translate-middle addToCartBtn btn-secondary btn"
+					onClick={addToCart}
+				>
+					Add to cart
+				</button>
 			</div>
-			<button onClick={addToCart}>Add to cart</button>
 		</div>
 	);
 }

@@ -5,7 +5,7 @@ import Cart from "../components/Cart";
 
 export default function Shop() {
 	return (
-		<div className="ui raised padded container segment">
+		<div className="boxShadow">
 			<ProductList />
 			<Cart />
 		</div>

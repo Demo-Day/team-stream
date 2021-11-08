@@ -18,12 +18,29 @@ db.once("open", async () => {
 
 	const products = await Product.insertMany([
 		{
-			name: "Premium Membership",
+			name: "Basic",
+			description: "Try it out for just 99c",
+			image: "online-streaming.png",
+			category: categories[0]._id,
+			price: 0.99,
+			quantity: 1,
+		},
+		{
+			name: "Professional",
 			description:
-				"Become a premium member and gain access to all of our premium content for life! This is a one time purchase.",
+				"Become a pro-member and gain access to all of our premium events plus bonus content.",
 			image: "online-streaming.png",
 			category: categories[0]._id,
 			price: 49.99,
+			quantity: 1,
+		},
+		{
+			name: "Business",
+			description:
+				"Become a business member and gain access to all of our premium content and exclusive offers.",
+			image: "online-streaming.png",
+			category: categories[0]._id,
+			price: 149.99,
 			quantity: 1,
 		},
 	]);

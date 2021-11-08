@@ -196,7 +196,7 @@ export default function EventForm() {
 									<label className="labelText ">
 										Premium Event
 									</label>
-									<div>
+									<div className="text-center">
 										<Radio
 											toggle
 											name="isPremiumContent"

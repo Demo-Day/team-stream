@@ -8,6 +8,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./css/App.css";
+
 import Events from "./pages/Events";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -51,56 +52,48 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<StoreProvider>
-					<div className="viewWindow d-flex flex-column justify-content-between">
+					<div className="app-header d-flex flex-column justify-content-between">
 						<Navbar className="navHeight" />
-						<div className="app">
-							<Route exact path="/">
-								<Landing />
-							</Route>
-							<Route exact path="/landing">
-								<Landing />
-							</Route>
-							<Route exact path="/events">
-								<Events />
-							</Route>
-							<Route exact path="/me">
-								<Profile />
-							</Route>
-							<Route exact path="/event/:eventId">
-								<Event />
-							</Route>
-							<Route exact path="/chat">
-								<Chat />
-							</Route>
-							<Route exact path="/login">
-								<Login />
-							</Route>
-							<Route exact path="/signup">
-								<Signup />
-							</Route>
-							<Route exact path="/new-event">
-								<EventForm />
-							</Route>
-							<Route exact path="/shop">
-								<Shop />
-							</Route>
-							<Route exact path="/success" component={Success} />
-							<Route
-								exact
-								path="/orderHistory"
-								component={OrderHistory}
-							/>
-							<Route
-								exact
-								path="/products/:id"
-								component={Detail}
-							/>
-							<Route
-								exact
-								path="/orders"
-								component={OrderHistory}
-							/>
-						</div>
+					</div>
+
+					<div className="app-body">
+						<Route exact path="/">
+							<Landing />
+						</Route>
+
+						<Route exact path="/events">
+							<Events />
+						</Route>
+						<Route exact path="/me">
+							<Profile />
+						</Route>
+						<Route exact path="/event/:eventId">
+							<Event />
+						</Route>
+						<Route exact path="/chat">
+							<Chat />
+						</Route>
+						<Route exact path="/login">
+							<Login />
+						</Route>
+						<Route exact path="/signup">
+							<Signup />
+						</Route>
+						<Route exact path="/new-event">
+							<EventForm />
+						</Route>
+						<Route exact path="/shop">
+							<Shop />
+						</Route>
+
+						<Route exact path="/success" component={Success} />
+						<Route
+							exact
+							path="/orderHistory"
+							component={OrderHistory}
+						/>
+						<Route exact path="/products/:id" component={Detail} />
+						<Route exact path="/orders" component={OrderHistory} />
 					</div>
 				</StoreProvider>
 			</Router>

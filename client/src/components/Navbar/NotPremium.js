@@ -25,7 +25,7 @@ export default function NotPremium() {
 			<Link to="/" className="navLink">
 				T.E.A.M. STREAM
 			</Link>
-			<Link to="/landing" className="navLink">
+			<Link to="/" className="navLink">
 				<FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
 			</Link>
 			<Link to="/events" className="navLink">

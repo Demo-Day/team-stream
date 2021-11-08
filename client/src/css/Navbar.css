@@ -3,15 +3,16 @@
 }
 
 .navbar {
-    background-color: black !important;
+    /* background-color: rgba(194, 194, 194, 0.276) !important; */
     padding: 15px;
 }
 
 .navbar svg {
-    color: white;
+    color: black;
+    font-size: large;
 }
 
 .navbar a {
-    color: white !important;
+    color: black !important;
     text-decoration: none;
 }
