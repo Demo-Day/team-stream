@@ -34,9 +34,9 @@ export default function Premium() {
 			<Link to="/me" className="navLink">
 				<FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
 			</Link>
-			<Link to="/new-chat" className="navLink">
+			{/* <Link to="/new-chat" className="navLink">
 				<FontAwesomeIcon icon={faWalkieTalkie}></FontAwesomeIcon>
-			</Link>
+			</Link> */}
 
 			<Link to="#" className="navLink" onClick={logout}>
 				<FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>

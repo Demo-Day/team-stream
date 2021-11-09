@@ -54,14 +54,16 @@ export default function Event() {
 							</Table.Body>
 						</Table>
 					</div>
-					<ReactPlayer
-						className="videoPlayer"
-						url={event.eventLink}
-						playing={true}
-						controls={true}
-						width={"100%"}
-						height={"auto"}
-					/>
+					<div className="player-wrapper">
+						<ReactPlayer
+							className="react-player"
+							url={event.eventLink}
+							playing={true}
+							controls={true}
+							width={"100%"}
+							height={"100%"}
+						/>
+					</div>
 					<LikeButton
 						key={event._id}
 						eventId={event._id}
