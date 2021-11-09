@@ -1,0 +1,37 @@
+.chatName {
+    font-size: x-small;
+}
+
+.chatMessage {
+    font-size: xx-small;
+    text-align: right;
+}
+
+.chatTime {
+    font-size: xx-small;
+}
+
+.messageContainer {
+    margin-top: 20px;
+}
+
+.message {
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    width: 300px;
+    background-color: #1877f2;
+    color: white;
+}
+
+.messageTop {
+    margin-bottom: 3px;
+}
+
+.messageBottom {
+    margin-top: 3px;
+    color: gray;
+}
+
+.message.own {
+    background-color: #333;
+}

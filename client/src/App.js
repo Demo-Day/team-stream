@@ -23,6 +23,7 @@ import OrderHistory from "./pages/OrderHistory";
 import Detail from "./pages/Detail";
 import Shop from "./pages/Shop";
 import Landing from "./pages/Landing";
+import NewChat from "./components/Chat/index";
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
 	uri: "/graphql",
@@ -59,6 +60,9 @@ function App() {
 					<div className="app-body">
 						<Route exact path="/">
 							<Landing title="Home" />
+						</Route>
+						<Route exact path="/new-chat">
+							<NewChat title="Chat" />
 						</Route>
 
 						<Route exact path="/events">
