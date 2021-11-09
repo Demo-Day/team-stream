@@ -13,7 +13,7 @@ export default function Chat() {
 						className="form-control"
 					/>
 				</div>
-				<div className="col-12 col-sm-6 col-xl-8 chatMessages boxShadow">
+				<div className="col-12 col-sm-8 col-xl-8 chatMessages boxShadow">
 					<h3>Conversation with This Friend</h3>
 					<div className="d-flex flex-column">
 						<Conversations />

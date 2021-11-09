@@ -24,7 +24,9 @@ const EventContainer = ({ events }) => {
 	if (eventList?.length === 0) {
 		return (
 			<div className="">
-				<h4>There are no events.</h4>
+				<div className="d-flex justify-content-center">
+					<h4 className="text-center">There are no events.</h4>
+				</div>
 			</div>
 		);
 	}

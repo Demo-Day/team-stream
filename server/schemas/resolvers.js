@@ -13,17 +13,14 @@ const resolvers = {
 		},
 		products: async (parent, { category, name }) => {
 			const params = {};
-
 			if (category) {
 				params.category = category;
 			}
-
 			if (name) {
 				params.name = {
 					$regex: name,
 				};
 			}
-
 			return await Product.find(params).populate("category");
 		},
 		product: async (parent, { _id }) => {
@@ -35,7 +32,6 @@ const resolvers = {
 					path: "orders.products",
 					populate: "category",
 				});
-
 				return user.orders.id(_id);
 			}
 
@@ -116,19 +112,19 @@ const resolvers = {
 	},
 
 	Mutation: {
-		upgrade: async (parent, args, context) => {
-			// if session id = pending checkout
-			if (context.user.pendingCheckout === args.session_id) {
-				await User.findOneAndUpdate(
-					{ _id: context.user._id },
-					{ isPremium: true }
-				);
-				context.user.isPremium = true;
-				delete context.user.pendingCheckout;
-			} else {
-				throw new ValidationError("Session IDs do not match.");
-			}
-		},
+		// upgrade: async (parent, args, context) => {
+		// 	// if session id = pending checkout
+		// 	if (context.user.pendingCheckout === args.session_id) {
+		// 		await User.findOneAndUpdate(
+		// 			{ _id: context.user._id },
+		// 			{ isPremium: true }
+		// 		);
+		// 		context.user.isPremium = true;
+		// 		delete context.user.pendingCheckout;
+		// 	} else {
+		// 		throw new ValidationError("Session IDs do not match.");
+		// 	}
+		// },
 
 		addEvent: async (
 			parent,

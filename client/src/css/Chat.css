@@ -1,14 +1,21 @@
 .chatName {
-    font-size: x-small;
+    font-size: small;
 }
 
 .chatMessage {
-    font-size: xx-small;
+    font-size: x-small;
     text-align: right;
 }
 
 .chatTime {
-    font-size: xx-small;
+    font-size: x-small;
+}
+
+.chatDiv {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .messageContainer {
