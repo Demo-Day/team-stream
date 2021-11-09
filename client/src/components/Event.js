@@ -19,17 +19,15 @@ export default function Event() {
 	});
 	const event = data?.event || {};
 
-	console.log("THIS EVENT!!!!!!", event);
-	console.log("LIKES!!!!!!", event.likes);
-
 	return (
-		<div className="ui raised padded container segment">
-			<Grid>
-				<Grid.Column computer={10} tablet={16} mobile={16}>
-					<PremiumBadge isPremiumContent={event.isPremiumContent} />
-					<h2 className="ui header text-center">
-						{event.eventTitle}
-					</h2>
+		<div className="boxShadow">
+			<div className="row">
+				<div className="col-12 col-lg-8">
+					{/* <PremiumBadge
+						className="badge"
+						isPremiumContent={event.isPremiumContent}
+					/> */}
+					<h2 className="text-center">{event.eventTitle}</h2>
 					<h5 className="text-center">{event.eventDate}</h5>
 					<p className="text-center">{event.eventDescription}</p>
 					<div className="align-center">
@@ -46,7 +44,9 @@ export default function Event() {
 							</Table.Header>
 							<Table.Body>
 								<Table.Row>
-									<Table.Cell className="left aligned">{event.category}</Table.Cell>
+									<Table.Cell className="left aligned">
+										{event.category}
+									</Table.Cell>
 									<Table.Cell className="right aligned">
 										{event.eventDate}
 									</Table.Cell>
@@ -54,19 +54,8 @@ export default function Event() {
 							</Table.Body>
 						</Table>
 					</div>
-					{/*
-					<p className="text-center">
-						<span>Category:</span> {event.category}
-					</p>
-					<p className="text-center">
-						<span>Event Date:</span>
-						{event.eventDate}
-					</p>
-					<p className="text-center">
-						<span>Event Description</span>
-					</p>
-					<p className="text-center">{event.eventDescription}</p> */}
 					<ReactPlayer
+						className="videoPlayer"
 						url={event.eventLink}
 						playing={true}
 						controls={true}
@@ -80,11 +69,11 @@ export default function Event() {
 					/>
 					<CommentForm eventId={event._id} />
 					<CommentList comments={event.comments} />
-				</Grid.Column>
-				<Grid.Column computer={6} tablet={16} mobile={16}>
+				</div>
+				<div className="col-12 col-lg-4">
 					<Chat />
-				</Grid.Column>
-			</Grid>
+				</div>
+			</div>
 		</div>
 	);
 }
