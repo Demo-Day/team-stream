@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import Brand from "../components/Brand";
 
 const Login = (props) => {
 	const [formState, setFormState] = useState({ email: "", password: "" });
@@ -43,11 +44,10 @@ const Login = (props) => {
 	};
 
 	return (
-		<div className="fadeIn d-flex justify-content-center h-100">
-			<div className="align-self-center ">
-				<div className="boxShadow loginForm ">
-					<div className="">
-						<h2 className="ui header">Login</h2>
+		<div className="fadeIn  ">
+			<div className="">
+				<div className="d-flex flex-column align-items-center justify-content-center">
+					<div className="col-12 col-md-6 col-lg-4">
 						<div>
 							{data ? (
 								<p>
@@ -55,39 +55,56 @@ const Login = (props) => {
 									<Link to="/">back to the homepage.</Link>
 								</p>
 							) : (
-								<form
-									className="ui form"
-									onSubmit={handleFormSubmit}
-								>
-									<div className="">
-										<input
-											autoFocus
-											placeholder="Your email"
-											name="email"
-											type="email"
-											value={formState.email}
-											onChange={handleChange}
-											className="form-control m-2"
-										/>
+								<div>
+									<Brand />
+									<h2 className="boxShadow">Login</h2>
+									<div className="boxShadow">
+										<form
+											className=""
+											onSubmit={handleFormSubmit}
+										>
+											<div className="form-group">
+												<input
+													autoFocus
+													placeholder="Your email"
+													name="email"
+													type="email"
+													value={formState.email}
+													onChange={handleChange}
+													className="form-control"
+												/>
+											</div>
+											<div className="form-group">
+												<input
+													className="form-control"
+													placeholder="******"
+													name="password"
+													type="password"
+													value={formState.password}
+													onChange={handleChange}
+												/>
+											</div>
+											<button
+												className="btn btn-secondary mt-4"
+												style={{ cursor: "pointer" }}
+												type="submit"
+											>
+												Submit
+											</button>
+										</form>
+										<div className="form-group">
+											<p>
+												Not yet a member?
+												<Link
+													className="formLink m-1"
+													to="/signup"
+												>
+													Signup
+												</Link>
+											</p>
+										</div>
 									</div>
-									<div className="">
-										<input
-											className="form-control m-2"
-											placeholder="******"
-											name="password"
-											type="password"
-											value={formState.password}
-											onChange={handleChange}
-										/>
-									</div>
-									<button
-										className="ui primary button mt-4"
-										style={{ cursor: "pointer" }}
-										type="submit"
-									>
-										Submit
-									</button>
-								</form>
+								</div>
 							)}
 
 							{error && (

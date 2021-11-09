@@ -20,9 +20,9 @@
 }
 
 .cart .close {
-  position: absolute;
-  top: .5rem;
-  right: .5rem;
+  /* position: absolute; */
+  /* top: .5rem; */
+  /* right: .5rem; */
   cursor: pointer;
   color: var(--tertiary);
 }
@@ -32,9 +32,9 @@
 }
 
 .cart-closed {
-  position: fixed;
-  top: 8%;
-  right: 3%;
+  /* position: fixed; */
+  /* top: 8%; */
+  /* right: 3%; */
   font-size: 2rem;
   cursor: pointer;
   /* background-color: white; */

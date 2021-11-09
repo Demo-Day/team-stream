@@ -15,9 +15,6 @@ export default function Messages({ own }) {
 			<div className={own === true ? "message own " : "message"}>
 				<p className="chatMessage">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Quia nulla animi cum eos maxime aliquid cupiditate velit
-					iste dignissimos, atque tempora totam similique fugiat
-					blanditiis sapiente explicabo voluptatum magni sunt.
 				</p>
 			</div>
 			<div className="messageBottom ">

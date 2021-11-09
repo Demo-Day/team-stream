@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-
+import Brand from "../components/Brand";
 import Auth from "../utils/auth";
 
 const Signup = () => {
@@ -38,10 +38,9 @@ const Signup = () => {
 	};
 
 	return (
-		<main className="fadeIn">
-			<div className="">
-				<div className="">
-					<h2 className="boxShadow">Sign Up</h2>
+		<main className="fadeIn container-fluid">
+			<div className="d-flex justify-content-center">
+				<div className="col-12 col-md-6 col-lg-4">
 					<div>
 						{data ? (
 							<p>
@@ -49,59 +48,73 @@ const Signup = () => {
 								<Link to="/">back to the homepage.</Link>
 							</p>
 						) : (
-							<form
-								className="boxShadow"
-								onSubmit={handleFormSubmit}
-							>
-								<div className="form-group">
-									<input
-										autoFocus
-										placeholder="Full Name"
-										className="form-control"
-										name="name"
-										type="text"
-										value={formState.name}
-										onChange={handleChange}
-									/>
+							<div>
+								<Brand />
+								<h2 className="boxShadow">Sign Up</h2>
+								<div className="boxShadow">
+									<form onSubmit={handleFormSubmit}>
+										<div className="form-group">
+											<input
+												autoFocus
+												placeholder="Full Name"
+												className="form-control"
+												name="name"
+												type="text"
+												value={formState.name}
+												onChange={handleChange}
+											/>
+										</div>
+										<div className="form-group">
+											<input
+												className="form-control"
+												placeholder="Username"
+												name="username"
+												type="text"
+												value={formState.username}
+												onChange={handleChange}
+											/>
+										</div>
+										<div className="form-group">
+											<input
+												className="form-control"
+												placeholder="Your email"
+												name="email"
+												type="email"
+												value={formState.email}
+												onChange={handleChange}
+											/>
+										</div>
+										<div className="form-group">
+											<input
+												className="form-control"
+												placeholder="******"
+												name="password"
+												type="password"
+												value={formState.password}
+												onChange={handleChange}
+											/>
+										</div>
+										<button
+											className="btn btn-secondary"
+											style={{ cursor: "pointer" }}
+											type="submit"
+										>
+											Submit
+										</button>
+									</form>
+									<div className="form-group">
+										<p>
+											Already a member?
+											<Link
+												className="formLink m-1"
+												to="/login"
+											>
+												Login
+											</Link>
+										</p>
+									</div>
 								</div>
-								<div className="form-group">
-									<input
-										className="form-control"
-										placeholder="Username"
-										name="username"
-										type="text"
-										value={formState.username}
-										onChange={handleChange}
-									/>
-								</div>
-								<div className="form-group">
-									<input
-										className="form-control"
-										placeholder="Your email"
-										name="email"
-										type="email"
-										value={formState.email}
-										onChange={handleChange}
-									/>
-								</div>
-								<div className="form-group">
-									<input
-										className="form-control"
-										placeholder="******"
-										name="password"
-										type="password"
-										value={formState.password}
-										onChange={handleChange}
-									/>
-								</div>
-								<button
-									className="btn btn-secondary"
-									style={{ cursor: "pointer" }}
-									type="submit"
-								>
-									Submit
-								</button>
-							</form>
+							</div>
 						)}
 
 						{error && (

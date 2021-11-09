@@ -12,6 +12,9 @@
   --font3: {
     font-family: 'Montserrat', sans-serif;
   }
+  --font4: {
+    font-family: 'Fredoka One', cursive;
+  }
 }
 
 * {
@@ -20,6 +23,16 @@
 
 body {
   background-color: #fafafa !important;
+}
+
+.brandContainer {
+  margin-top: 25px;
+}
+
+.brandTitle {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  font-size: 50px;
 }
 
 .hero {
@@ -183,4 +196,12 @@ textarea {
 
 .videoPlayer {
   margin-top: 10px;
+}
+
+.formLink {
+  text-decoration: none;
+}
+
+.h100 {
+  height: 100vh;
 }

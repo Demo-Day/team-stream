@@ -9,6 +9,7 @@ import {
 	faCalendarStar,
 	faUser,
 	faSignOut,
+	faWalkieTalkie,
 } from "@fortawesome/pro-solid-svg-icons";
 
 export default function Premium() {
@@ -32,6 +33,9 @@ export default function Premium() {
 			</Link>
 			<Link to="/me" className="navLink">
 				<FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+			</Link>
+			<Link to="/new-chat" className="navLink">
+				<FontAwesomeIcon icon={faWalkieTalkie}></FontAwesomeIcon>
 			</Link>
 
 			<Link to="#" className="navLink" onClick={logout}>

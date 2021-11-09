@@ -31,16 +31,16 @@ const Navbar = () => {
 		<div className="d-flex justify-content-between nav navbar">
 			{/* Menu Items that will show when user is not logged in */}
 
-			<Link to="/" className="navLink">
+			<Link to="/" className="navLink brandTitle">
 				T.E.A.M. STREAM
 			</Link>
-			<Cart />
 			<Link to="/login" className="navLink">
 				Login
 			</Link>
 			<Link to="/signup" className="navLink">
 				Signup
 			</Link>
+			<Cart />
 		</div>
 	);
 };
