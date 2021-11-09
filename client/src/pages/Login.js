@@ -56,7 +56,9 @@ const Login = (props) => {
 								</p>
 							) : (
 								<div>
-									<Brand />
+									<Link className="brandLink" to="/">
+										<Brand />
+									</Link>
 									<h2 className="boxShadow">Login</h2>
 									<div className="boxShadow">
 										<form

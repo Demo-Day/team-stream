@@ -49,7 +49,9 @@ const Signup = () => {
 							</p>
 						) : (
 							<div>
-								<Brand />
+								<Link className="brandLink" to="/">
+									<Brand />
+								</Link>
 								<h2 className="boxShadow">Sign Up</h2>
 								<div className="boxShadow">
 									<form onSubmit={handleFormSubmit}>

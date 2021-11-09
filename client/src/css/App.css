@@ -29,6 +29,11 @@ body {
   margin-top: 25px;
 }
 
+.brandLink {
+  text-decoration: none;
+  color: black;
+}
+
 .brandTitle {
   font-family: 'Fredoka One', cursive;
   text-align: center;
