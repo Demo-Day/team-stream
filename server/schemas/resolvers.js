@@ -116,32 +116,30 @@ const resolvers = {
 		},
 		event: async (parent, { eventId }) => {
 			return Event.findOne({ _id: eventId })
+				.populate("conversation")
 				.populate({
 					path: "conversation.members",
 					populate: "user",
 				})
 				.populate({
 					path: "conversation.messages",
-					populate: "message",
+					populate: "messageText",
+				})
+				.populate({
+					path: "conversation.messages",
+					populate: "sender.user",
 				});
+		},
+		conversation: async (parent, { conversationId }, context) => {
+			return Conversation.findOne({ _id: conversationId })
+				.populate("messages")
+				.populate("event")
+				.populate({ path: "members", populate: "user" })
+				.populate({ path: "messages", populate: "sender" });
 		},
 	},
 
 	Mutation: {
-		// upgrade: async (parent, args, context) => {
-		// 	// if session id = pending checkout
-		// 	if (context.user.pendingCheckout === args.session_id) {
-		// 		await User.findOneAndUpdate(
-		// 			{ _id: context.user._id },
-		// 			{ isPremium: true }
-		// 		);
-		// 		context.user.isPremium = true;
-		// 		delete context.user.pendingCheckout;
-		// 	} else {
-		// 		throw new ValidationError("Session IDs do not match.");
-		// 	}
-		// },
-
 		addEvent: async (
 			parent,
 			{

@@ -3,10 +3,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 import Conversations from "./Conversations";
-import Auth from "../../utils/auth";
 
 import { SEND_MESSAGE } from "../../utils/mutations";
-import { QUERY_SINGLE_EVENT } from "../../utils/queries";
 
 import "../../css/Chat.css";
 
@@ -38,12 +36,12 @@ export default function Chat({ event }) {
 	return (
 		<div className="container-fluid fadeIn ">
 			<div className="row">
-				<div className="col-12 col-sm-8 col-xl-8 chatMessages boxShadow">
-					<h3>Conversation with This Friend</h3>
+				<div className="col-12 chatMessages ">
+					<h3>Live Chat</h3>
 					<div className="d-flex flex-column">
-						<Conversations />
+						<Conversations conversation={event.conversation} />
 					</div>
-					<div>
+					<div className="chatInput">
 						<form onSubmit={handleFormSubmit}>
 							<textarea
 								name="messageText"

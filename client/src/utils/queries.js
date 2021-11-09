@@ -108,6 +108,9 @@ export const QUERY_SINGLE_EVENT = gql`
 				_id
 				members {
 					_id
+					name
+					username
+					email
 				}
 				messages {
 					_id
@@ -123,7 +126,32 @@ export const QUERY_SINGLE_EVENT = gql`
 		}
 	}
 `;
-
+export const QUERY_SINGLE_CONVERSATION = gql`
+	query {
+		conversation(conversationId: ID) {
+			_id
+			event {
+				_id
+				eventTitle
+			}
+			members {
+				_id
+				name
+				username
+			}
+			messages {
+				_id
+				messageText
+				createdAt
+				sender {
+					_id
+					username
+					name
+				}
+			}
+		}
+	}
+`;
 export const QUERY_PRODUCTS = gql`
 	query getProducts($category: ID) {
 		products(category: $category) {
