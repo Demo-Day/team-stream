@@ -112,3 +112,14 @@ export const UPGRADE_USER = gql`
 		}
 	}
 `;
+export const SEND_MESSAGE = gql`
+	mutation sendMessage($conversationId: ID!, $messageText: String!) {
+		sendMessage(
+			conversationId: $conversationId
+			messageText: $messageText
+		) {
+			_id
+			messageText
+		}
+	}
+`;

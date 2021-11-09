@@ -42,6 +42,12 @@ const userSchema = new Schema({
 			ref: "Event",
 		},
 	],
+	conversations: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: "Conversation",
+		},
+	],
 	orders: [Order.schema],
 });
 

@@ -42,7 +42,7 @@ const CommentForm = ({ eventId }) => {
 
 	return (
 		<div>
-			<h4 className="ui header">Add a comment</h4>
+			<h4 className="">Add a comment</h4>
 
 			{Auth.loggedIn() ? (
 				<>
@@ -52,25 +52,25 @@ const CommentForm = ({ eventId }) => {
 						}`}
 					>
 						Character Count: {characterCount}/280
-						{error && <span className="ui error message">{error.message}</span>}
+						{error && (
+							<span className="alert alert-danger">
+								{error.message}
+							</span>
+						)}
 					</p>
-					<form className="ui form" onSubmit={handleFormSubmit}>
-						<div className="field">
+					<form className="" onSubmit={handleFormSubmit}>
+						<div className="form-group">
 							<input
 								name="commentText"
 								placeholder="Add your comment..."
 								value={commentText}
-								className=""
-								style={{
-									lineHeight: "1.5",
-									resize: "vertical",
-								}}
+								className="form-control"
 								onChange={handleChange}
 							></input>
 						</div>
 
 						<div>
-							<button className="ui primary button" type="submit">
+							<button className="btn btn-secondary" type="submit">
 								Add Comment
 							</button>
 						</div>

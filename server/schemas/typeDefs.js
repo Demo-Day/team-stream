@@ -11,6 +11,7 @@ const typeDefs = gql`
 		createdAt: String
 		events: [Event]
 		orders: [Order]
+		conversations: [Conversation]
 	}
 
 	type Event {
@@ -31,6 +32,15 @@ const typeDefs = gql`
 	type Conversation {
 		_id: ID
 		event: Event
+		members: [User]
+		messages: [Message]
+	}
+	type Message {
+		_id: ID
+		conversation: Conversation
+		sender: User
+		messageText: String
+		createdAt: String
 	}
 	type Product {
 		_id: ID
@@ -110,6 +120,7 @@ const typeDefs = gql`
 		removeComment(eventId: ID!, commentId: ID!): Event
 		upgrade(userId: ID!): User
 		addLike(eventId: ID!): Event
+		sendMessage(conversationId: ID!, messageText: String): Message
 	}
 `;
 

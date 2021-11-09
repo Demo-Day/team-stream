@@ -104,6 +104,22 @@ export const QUERY_SINGLE_EVENT = gql`
 				commentAuthor
 				createdAt
 			}
+			conversation {
+				_id
+				members {
+					_id
+				}
+				messages {
+					_id
+					sender {
+						_id
+						name
+						username
+					}
+					messageText
+					createdAt
+				}
+			}
 		}
 	}
 `;

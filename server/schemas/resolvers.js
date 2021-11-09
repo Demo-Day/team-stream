@@ -115,7 +115,15 @@ const resolvers = {
 			return Event.find().sort({ createdAt: -1 }).populate("user");
 		},
 		event: async (parent, { eventId }) => {
-			return Event.findOne({ _id: eventId });
+			return Event.findOne({ _id: eventId })
+				.populate({
+					path: "conversation.members",
+					populate: "user",
+				})
+				.populate({
+					path: "conversation.messages",
+					populate: "message",
+				});
 		},
 	},
 
@@ -263,6 +271,31 @@ const resolvers = {
 						$addToSet: { likes: context.user._id },
 					}
 				);
+			}
+			throw new AuthenticationError("You need to be logged in!");
+		},
+		sendMessage: async (
+			parent,
+			{ conversationId, messageText },
+			context
+		) => {
+			if (context.user) {
+				const message = await Message.create({
+					conversation: conversationId,
+					messageText,
+					sender: context.user._id,
+				});
+				await Conversation.findOneAndUpdate(
+					{
+						_id: conversationId,
+					},
+					{
+						$push: { messages: message._id },
+						$addToSet: { members: context.user._id },
+					}
+				);
+
+				return message;
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},

@@ -4,7 +4,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_EVENT } from "../utils/queries";
 
 import ReactPlayer from "react-player";
-import Chat from "./Chat";
+// import Chat from "./Chat";
+import Chat from "./Chat/index";
 import { Grid } from "semantic-ui-react";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
@@ -73,7 +74,7 @@ export default function Event() {
 					<CommentList comments={event.comments} />
 				</div>
 				<div className="col-12 col-lg-4">
-					<Chat />
+					<Chat event={event} />
 				</div>
 			</div>
 		</div>
