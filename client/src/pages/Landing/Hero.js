@@ -8,10 +8,6 @@ import { QUERY_ME, QUERY_USER } from "../../utils/queries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/pro-solid-svg-icons";
 export default function Hero() {
-	// if (Auth.loggedIn() && user.isPremium) {
-	// 	return;
-	// }
-
 	const { username: userParam } = useParams();
 	const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
 		variables: { username: userParam },

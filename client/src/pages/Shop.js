@@ -5,7 +5,7 @@ import Cart from "../components/Cart";
 
 export default function Shop() {
 	return (
-		<div className="boxShadow">
+		<div className="fadeIn boxShadow">
 			<ProductList />
 			<Cart />
 		</div>

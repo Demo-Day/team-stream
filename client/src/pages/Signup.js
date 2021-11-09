@@ -38,7 +38,7 @@ const Signup = () => {
 	};
 
 	return (
-		<main className="">
+		<main className="fadeIn">
 			<div className="">
 				<div className="">
 					<h2 className="boxShadow">Sign Up</h2>

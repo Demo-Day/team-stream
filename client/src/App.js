@@ -58,32 +58,32 @@ function App() {
 
 					<div className="app-body">
 						<Route exact path="/">
-							<Landing />
+							<Landing title="Home" />
 						</Route>
 
 						<Route exact path="/events">
-							<Events />
+							<Events title="Events" />
 						</Route>
 						<Route exact path="/me">
-							<Profile />
+							<Profile title="Profile" />
 						</Route>
 						<Route exact path="/event/:eventId">
-							<Event />
+							<Event title="Event" />
 						</Route>
 						<Route exact path="/chat">
-							<Chat />
+							<Chat title="Chat" />
 						</Route>
 						<Route exact path="/login">
-							<Login />
+							<Login title="Login" />
 						</Route>
 						<Route exact path="/signup">
-							<Signup />
+							<Signup title="Signup" />
 						</Route>
 						<Route exact path="/new-event">
-							<EventForm />
+							<EventForm title="New Event" />
 						</Route>
 						<Route exact path="/shop">
-							<Shop />
+							<Shop title="Shop" />
 						</Route>
 
 						<Route exact path="/success" component={Success} />

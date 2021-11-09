@@ -43,7 +43,7 @@ const Login = (props) => {
 	};
 
 	return (
-		<div className="d-flex justify-content-center h-100">
+		<div className="fadeIn d-flex justify-content-center h-100">
 			<div className="align-self-center ">
 				<div className="boxShadow loginForm ">
 					<div className="">

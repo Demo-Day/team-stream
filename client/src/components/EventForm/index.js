@@ -94,9 +94,9 @@ export default function EventForm() {
 		}
 	};
 	return (
-		<div className="d-flex justify-content-center">
+		<div className="fadeIn d-flex justify-content-center">
 			<div className="col-12 col-lg-8 col-xl-6">
-				<div className=" m-3">
+				<div className="">
 					<div>
 						<form
 							className=""
@@ -112,7 +112,7 @@ export default function EventForm() {
 									</button>
 								</div>
 							</div>
-							<div className="boxShadow">
+							<div className="boxShadow m-3">
 								<div className="form-group ">
 									<label className="labelText">
 										Event Title

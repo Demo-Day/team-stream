@@ -30,10 +30,14 @@ export default function EventCard({ events, user }) {
 									<Card.Title className="eventCardTitle">
 										{event.eventTitle}
 									</Card.Title>
-									<Card.Text>
-										{event.eventDescription}
-									</Card.Text>
-									<Card.Text>{event.eventDate}</Card.Text>
+									<ListGroup>
+										<ListGroupItem>
+											{event.eventDate}
+										</ListGroupItem>
+										<ListGroupItem>
+											{event.eventDescription}
+										</ListGroupItem>
+									</ListGroup>
 								</div>
 								<ConditionalLink
 									className=""

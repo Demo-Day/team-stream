@@ -35,7 +35,7 @@ const Profile = () => {
 	const ordersArray = user.orders;
 
 	return (
-		<div className="d-flex justify-content-center">
+		<div className=" fadeIn d-flex justify-content-center">
 			<div className="col-12 col-md-8">
 				<div className="boxShadow">
 					<h2 className="card-title">
