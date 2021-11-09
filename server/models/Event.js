@@ -44,6 +44,11 @@ const eventSchema = new Schema({
 		type: String,
 		// default: "Uncategorized",
 	},
+	conversation: {
+		type: Schema.Types.ObjectId,
+		ref: "Conversation",
+	},
+
 	likes: [
 		{
 			type: Schema.Types.ObjectId,

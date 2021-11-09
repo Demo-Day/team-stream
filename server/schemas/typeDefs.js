@@ -26,8 +26,12 @@ const typeDefs = gql`
 		category: String
 		likes: [User]
 		comments: [Comment]
+		conversation: Conversation
 	}
-
+	type Conversation {
+		_id: ID
+		event: Event
+	}
 	type Product {
 		_id: ID
 		name: String

@@ -1,10 +1,16 @@
 const { Schema, model } = require("mongoose");
 
 const conversationSchema = new Schema({
-	name: {
-		type: String,
-		required: true,
+	event: {
+		type: Schema.Types.ObjectId,
+		ref: "Event",
 	},
+	users: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: "User",
+		},
+	],
 });
 
 const Conversation = model("Conversation", conversationSchema);

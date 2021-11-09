@@ -2,7 +2,15 @@ const {
 	AuthenticationError,
 	ValidationError,
 } = require("apollo-server-express");
-const { User, Event, Category, Product, Order } = require("../models");
+const {
+	User,
+	Event,
+	Category,
+	Product,
+	Order,
+	Conversation,
+	Message,
+} = require("../models");
 const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
@@ -148,6 +156,17 @@ const resolvers = {
 					category,
 					user: context.user._id,
 				});
+
+				const conversation = await Conversation.create({
+					event: event._id,
+				});
+				await Event.findOneAndUpdate(
+					{
+						_id: event._id,
+					},
+					{ $set: { conversation: conversation._id } }
+				);
+
 				await User.findOneAndUpdate(
 					{ _id: context.user._id },
 					{ $addToSet: { events: event._id } }
@@ -163,36 +182,28 @@ const resolvers = {
 		},
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
-
 			if (!user) {
 				throw new AuthenticationError(
 					"No user found with this email address"
 				);
 			}
-
 			const correctPw = await user.isCorrectPassword(password);
-
 			if (!correctPw) {
 				throw new AuthenticationError("Incorrect credentials");
 			}
-
 			const token = signToken(user);
-
 			return { token, user };
 		},
 		addOrder: async (parent, { products }, context) => {
 			console.log(context);
 			if (context.user) {
 				const order = new Order({ products });
-
 				await User.findByIdAndUpdate(context.user._id, {
 					$set: { isPremium: true },
 					$push: { orders: order },
 				});
-
 				return order;
 			}
-
 			throw new AuthenticationError("Not logged in");
 		},
 		updateUser: async (parent, args, context) => {
@@ -201,12 +212,10 @@ const resolvers = {
 					new: true,
 				});
 			}
-
 			throw new AuthenticationError("Not logged in");
 		},
 		updateProduct: async (parent, { _id, quantity }) => {
 			const decrement = Math.abs(quantity) * -1;
-
 			return await Product.findByIdAndUpdate(
 				_id,
 				{ $inc: { quantity: decrement } },
@@ -243,7 +252,6 @@ const resolvers = {
 				{ new: true }
 			);
 		},
-
 		addLike: async (parent, { eventId }, context) => {
 			if (context.user) {
 				console.log(context.user);
