@@ -33,7 +33,7 @@ const Profile = () => {
 		);
 	}
 	const ordersArray = user.orders;
-	console.log("ordersArray", ordersArray);
+
 	return (
 		<div className="d-flex justify-content-center">
 			<div className="col-12 col-md-8">

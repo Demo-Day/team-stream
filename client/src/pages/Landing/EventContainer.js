@@ -20,7 +20,7 @@ const EventContainer = ({ events }) => {
 	});
 
 	const user = data?.me || data?.user || {};
-	console.log(user);
+
 	if (eventList?.length === 0) {
 		return (
 			<div className="">
