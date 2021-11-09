@@ -34,23 +34,10 @@ body {
   color: black;
 }
 
-.brandTitle {
-  font-family: 'Fredoka One', cursive;
-  text-align: center;
-  font-size: 50px;
-}
-
 .hero {
   background-image: url('../assets/bg-1.jpg');
   background-size: cover;
   height: 45vh;
-}
-
-.heroTitle {
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  font-size: 72px;
-  /* margin: 50px; */
 }
 
 .btn-primary {
@@ -209,4 +196,16 @@ textarea {
 
 .h100 {
   height: 100vh;
+}
+
+.brandTitle {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  font-size: 50px;
+}
+
+.heroTitle {
+  color: white;
+  font-size: 72px;
+  /* margin: 50px; */
 }

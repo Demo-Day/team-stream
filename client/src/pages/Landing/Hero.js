@@ -17,12 +17,15 @@ export default function Hero() {
 	return (
 		<div className=" d-flex align-items-center hero">
 			<div className="m-4">
-				<h1 className="heroTitle">T.E.A.M. STREAM</h1>
-				<h5 className="m-3 text-light">
+				<h1 className="heroTitle brandTitle">T.E.A.M. STREAM</h1>
+				<h5 className="m-3 text-light ">
 					Welcome to the future of streaming.
 				</h5>
 				{user.isPremium ? (
-					<Link to="/new-event" className="m-1 btn btn-primary">
+					<Link
+						to="/new-event"
+						className="m-1 btn btn-primary text-center"
+					>
 						Create an Event
 						<FontAwesomeIcon
 							icon={faChevronRight}
@@ -30,7 +33,10 @@ export default function Hero() {
 						></FontAwesomeIcon>
 					</Link>
 				) : (
-					<Link to="/shop" className="m-1 btn btn-primary">
+					<Link
+						to="/shop"
+						className="m-1 btn btn-primary text-center"
+					>
 						Become a premium member today
 						<FontAwesomeIcon
 							icon={faChevronRight}
